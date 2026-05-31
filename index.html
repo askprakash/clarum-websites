@@ -2134,7 +2134,7 @@
         </div>
 
       </div>
-      <form class="contact-form reveal" name="contact" method="POST" onsubmit="handleSubmit(event)">
+      <form class="contact-form reveal" name="contact" action="https://formspree.io/f/xlgvaopv" method="POST" onsubmit="handleSubmit(event)">
         
         
         <div class="form-row">
@@ -2245,15 +2245,14 @@
     </div>
   </footer>
 
-  <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-          emailjs.init('YOUR_PUBLIC_KEY');
-    </script>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  
+    
+    
+          
+    cript data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Active nav link on click
     const navAnchors = document.querySelectorAll('.nav-links a');
-    navAnchors.forEach(link => {
+    
       link.addEventListener('click', () => {
         navAnchors.forEach(a => a.classList.remove('active'));
         link.classList.add('active');
@@ -2362,7 +2361,7 @@
       if (card) card.classList.toggle('flipped');
     }
 
-        // Form submit — EmailJS
+        // Form submit — Formspree
     function handleSubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -2371,25 +2370,26 @@
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-                      from_name: document.getElementById('firstName').value + ' ' + document.getElementById('lastName').value,
-                      from_email: document.getElementById('email').value,
-                      phone: document.getElementById('phone').value,
-                      service: document.getElementById('service').value,
-                      message: document.getElementById('message').value
-            }, 'YOUR_PUBLIC_KEY')
-            .then(() => {
-                      btn.textContent = 'Message Sent ✓';
-                      btn.style.background = '#2a4460';
-                      form.reset();
-                      document.getElementById('form-success').style.display = 'block';
+      fetch('https://formspree.io/f/xlgvaopv', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: new FormData(form)
+      })
+            .then(response => {
+                      if (response.ok) {
+                                  btn.textContent = 'Message Sent ✓';
+                                  btn.style.background = '#2a4460';
+                                  form.reset();
+                                  document.getElementById('form-success').style.display = 'block';
+                      } else {
+                                  btn.textContent = 'Send Failed — Try Again';
+                                  btn.disabled = false;
+                      }
             })
-            .catch((error) => {
-                      console.error('EmailJS error:', error);
+            .catch(() => {
                       btn.textContent = 'Send Failed — Try Again';
                       btn.disabled = false;
             });
-
     // ─── HAMBURGER MENU ───
     const hamburger = document.getElementById('navHamburger');
     const mobileOverlay = document.getElementById('mobileNavOverlay');

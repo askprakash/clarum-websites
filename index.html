@@ -1386,7 +1386,7 @@
       transform: scale(0.95) translateY(20px);
       transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    .reveal-scale.revealed {
+    .reveal-scale.revealed { opacity: 1; transform: scale(1) translateY(0); }.reveal.revealed .reveal, .reveal.visible .reveal { opacity: 1; transform: translateY(0); } {
       opacity: 1;
       transform: scale(1) translateY(0);
     }

@@ -1556,14 +1556,15 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0;
-        margin-top: 20px;
+        margin-top: 16px;
         width: 100%;
         text-align: center;
-        align-items: center;
+        align-items: end;
       }
-      .stat-item { text-align: center; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-      .stat-num { font-size: 32px; line-height: 1; }
-      .stat-label { font-size: 9px; letter-spacing: 1px; margin-top: 4px; }
+      .stat-item { text-align: center; padding: 6px 4px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+      .stat-num { font-size: 20px; line-height: 1; }
+      .stat-label { font-size: 8px; letter-spacing: 1px; margin-top: 3px; }
+      .scroll-indicator { display: none; }
       .hero-actions { flex-wrap: wrap; }
       .hero-actions .btn-primary,
       .hero-actions .btn-outline { flex: 1 1 140px; text-align: center; }
@@ -1575,7 +1576,9 @@
       .footer-main { padding: 32px 16px 24px; }
       .footer-bottom { padding: 16px 16px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
       .contact-grid { gap: 32px; }
-      #contact { padding-bottom: 32px; }
+      #contact { padding-bottom: 24px; }
+      .footer-main { padding: 24px 18px 20px; }
+      .footer-bottom { padding: 16px 18px 20px; }
       h2 { font-size: clamp(1.5rem, 5.5vw, 2rem); }
       .engagement-note-text { font-size: 14px; }
       .section-sub { font-size: 15px; }

@@ -1546,6 +1546,7 @@
         font-size: 15px;
         line-height: 1.7;
       }
+      #home { padding-top: 120px; }
       .hero-photo { position: relative; width: 100%; height: 280px; margin-top: 20px; border-radius: 12px; overflow: hidden; }
       .hero-photo img { height: 100%; width: 100%; object-fit: cover; object-position: top center; filter: none; }
       .hero-photo::before { display: none; }
@@ -1558,10 +1559,11 @@
         margin-top: 20px;
         width: 100%;
         text-align: center;
+        align-items: center;
       }
-      .stat-item { text-align: center; padding: 8px 4px; }
-      .stat-num { font-size: 32px; }
-      .stat-label { font-size: 9px; letter-spacing: 1px; }
+      .stat-item { text-align: center; padding: 8px 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .stat-num { font-size: 32px; line-height: 1; }
+      .stat-label { font-size: 9px; letter-spacing: 1px; margin-top: 4px; }
       .hero-actions { flex-wrap: wrap; }
       .hero-actions .btn-primary,
       .hero-actions .btn-outline { flex: 1 1 140px; text-align: center; }
@@ -1573,6 +1575,7 @@
       .footer-main { padding: 32px 16px 24px; }
       .footer-bottom { padding: 16px 16px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
       .contact-grid { gap: 32px; }
+      #contact { padding-bottom: 32px; }
       h2 { font-size: clamp(1.5rem, 5.5vw, 2rem); }
       .engagement-note-text { font-size: 14px; }
       .section-sub { font-size: 15px; }

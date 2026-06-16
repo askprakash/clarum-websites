@@ -1577,10 +1577,10 @@
       .footer-bottom { padding: 16px 16px 24px; flex-direction: column; gap: 12px; align-items: flex-start; }
       .contact-grid { gap: 32px; }
       #contact { padding-bottom: 24px; }
-      #credibility-strip > div:nth-child(even) { display: none; }
-      #credibility-strip { gap: 0; }
-      #credibility-strip > div:nth-child(odd) { border-bottom: 1px solid rgba(201,168,76,0.15); padding: 10px 0; }
-      #credibility-strip > div:nth-child(odd):last-child { border-bottom: none; }
+      #credibility-strip > div:nth-child(even) { display: none !important; }
+      #credibility-strip { gap: 0 !important; flex-direction: column !important; align-items: stretch !important; }
+      #credibility-strip > div:nth-child(odd) { border-bottom: 1px solid rgba(201,168,76,0.15); padding: 8px 0; justify-content: flex-start !important; gap: 16px !important; }
+      #credibility-strip > div:nth-child(11) { border-bottom: none; }
       .footer-main { display: none; }
       .footer-bottom { padding: 16px 18px 20px; flex-direction: column; gap: 8px; }
       .footer-disclaimer { font-size: 10px; line-height: 1.5; }
